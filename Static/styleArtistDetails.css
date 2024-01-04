@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'archiaregular';
+  src: url('archia-regular-webfont.eot');
+  src: url('archia-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('archia-regular-webfont.woff2') format('woff2'),
+       url('archia-regular-webfont.woff') format('woff'),
+       url('archia-regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'archiaregular', sans-serif;
+}
+
+
+body {
+display: flex;
+  flex-direction: column;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+background: #ffffff;
+}
+
+  article {
+    text-align: center;
+  }
+  
+ .hover-trigger{
+    display: flex;
+    justify-content: center;
+  }
+
+  article li {
+    list-style: none;
+    margin-bottom: 2vh;
+
+  }
+
+  #home{ 
+    border: none;
+    cursor: pointer;
+    padding: 2vh 2vh;
+      width: fit-content;
+    background: #2F4858;
+    box-shadow: 35px 35px 100px 10px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    color: white;
+  }
+  

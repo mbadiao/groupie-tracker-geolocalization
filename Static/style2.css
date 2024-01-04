@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@font-face {
+    font-family: 'archiaregular';
+    src: url('archia-regular-webfont.eot');
+    src: url('archia-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('archia-regular-webfont.woff2') format('woff2'),
+         url('archia-regular-webfont.woff') format('woff'),
+         url('archia-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'archiaregular', sans-serif;
+}
+
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	flex-wrap: wrap;
+	gap: 5vh;
+	background: #ffffff;
+}
+
+.aside-content-left{
+	color: #000000;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.aside-content-left-title{
+	color: #2F4858;
+	font-size: 50px;
+	text-shadow: 35px 35px 100px rgba(0, 0, 0, 0.25); 
+}
+.aside-content-left form .searchinput {
+	padding: 2vh 4vh;
+	margin: auto;
+	border: none;
+	background: #FFF;
+	box-shadow: 35px 35px 100px 10px rgba(0, 0, 0, 0.25);
+}
+
+.aside-content-left form .searchinput:focus{
+	outline: #2F4858;
+}
+
+.aside-content-left form .searchinput:focus-within{
+	outline: none;
+	border:1px solid #2F4858;
+}
+
+
+.aside-content-left form .button-search {
+	border: none;
+	cursor: pointer;
+	padding: 2vh 2vh;
+	background: #2F4858;
+	box-shadow: 35px 35px 100px 10px rgba(0, 0, 0, 0.25);
+}
+
+.container {
+	max-width: 1200px;
+	width: 95%;
+	border-radius: 30px;
+}
+
+.container-title{
+	color: #2F4858;
+	font-size: 55px;
+	text-align: center;
+	text-shadow: 35px 35px 100px rgba(0, 0, 0, 0.25); 
+}
+
+.slider-wrapper{
+	position: relative;
+}
+
+.slider-wrapper .slide-button{
+	position: absolute;
+	top: 50%;
+	height: 50px;
+	width: 50px;
+	color: #ffffff;
+	background: #000000;
+	font-size: 2.2rem;
+	cursor: pointer;
+	border-radius: 50%;
+	border: none;
+	outline: none;
+	transform: translateY(-50%);
+}
+
+.slider-wrapper .slide-button:hover {
+	background: #444;
+}
+
+.slider-wrapper .slide-button#prev-slide {
+	left: -20px;
+	display: none;
+}
+
+.slider-wrapper .slide-button#next-slide {
+	right: -20px;
+}
+.slider-wrapper .image-list {
+	display: grid;
+	gap: 18px;
+	
+	margin-bottom: 30px;
+	overflow-x: auto;
+	scrollbar-width: none;
+	grid-template-columns: repeat(52, 1fr);
+}
+
+.slider-wrapper .image-list::-webkit-scrollbar{
+	display: none;
+}
+
+.slider-wrapper .image-list .image-items .image-item{
+	width: 300px;
+	height: 400px;
+	object-fit: contain;
+	transition: 0.5s;
+}
+
+
+.slider-wrapper .image-list .image-items .image-item:hover{
+	scale: 1.1;
+}
+
+.container .slider-scrollbar{
+	height: 24px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.slider-scrollbar .scrollbar-track {
+	height: 2px;
+	width: 100%;
+	background: #cccccc;
+	position: relative;
+	border-radius: 4px;
+}
+
+.slider-scrollbar:hover .scrollbar-track {
+	height: 4px;
+
+}
+
+.slider-scrollbar .scrollbar-thumb {
+	position: absolute;
+	height: 100%;
+	width: 50%;
+	background: #000000;
+	border-radius: inherit;
+	cursor: grab;
+}
+
+.slider-scrollbar .scrollbar-track:active{
+	cursor: grabbing;
+	height: 8px;
+	top: -2px;
+}
+
+.slider-scrollbar .scrollbar-thumb::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -10px;
+	bottom: -10px;
+}
+
+@media (max-width: 1023px) {
+	.slider-wrapper .slide-button {
+		display: none!important;
+	}
+
+	.slider-wrapper .image-list {
+		gap: 10px;
+		margin-bottom: 15px;
+	}
+
+	.slider-wrapper .image-list .image-items .image-item {
+		width: 280px;
+		height: 380px;
+	}
+
+	.slider-scrollbar .scrollbar-thumb {
+		width: 20%;
+	}
+}

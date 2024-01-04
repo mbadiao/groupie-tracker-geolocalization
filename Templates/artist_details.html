@@ -1,0 +1,82 @@
+<!-- artist_details.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Details</title>
+    <link rel="stylesheet" href="/Static/styleArtistDetails.css">
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>    
+</head>
+<body>
+        {{with .Artists}}
+        <img class="hover-trigger" src="{{.Image}}" alt="">
+                <article>
+                    <h1 class="name-artist">Name:</h1>
+                    <p>{{.Name}}</p>
+                    <p> <h1>Creation Date:</h1>{{.CreationDate}}</p>
+                    <p> <h1>First Album:</h1> {{.FirstAlbum}}</p>
+                    <ul>
+                        <h1>Members:</h1>
+                        {{range .Members}}
+                            <li>{{.}}</li>
+                        {{end}}
+                    </ul>
+                    <!-- Ajoutez d'autres détails d'artiste selon vos besoins -->
+                </article>
+        {{end}}
+
+    
+        {{with .Location}}
+                <article>
+                    <h1>Locations</h1>
+                    <p>
+                        <ul>
+                            {{range .Locations}}
+                                <li class="Location">{{.}}</li> 
+                            {{end}}
+                        </ul> 
+                    </p>
+                    <!-- Ajoutez d'autres champs selon vos besoins -->
+                </article>
+        {{end}}
+
+
+        {{with .ConcertDates}}
+                <article>
+                    <h1>Dates</h1>
+                    <p>
+                        <ul>
+                            {{range .Dates}}
+                                <li>{{.}}</li> 
+                            {{end}}
+                        </ul> 
+                    </p>
+                    <!-- Ajoutez d'autres champs selon vos besoins -->
+                </article>
+        {{end}}
+
+        {{with .Relations}}
+            <article>
+                <h1>Relations</h1>
+                <p>
+                    <ul>
+                        {{range $Location, $Dates := .DatesLocations}}
+                           {{ range $Date := $Dates }}
+                                <li>{{ $Location }}-- {{ $Date }} </li>
+                            {{ end }}    
+                        {{end}}
+                    </ul> 
+                </p>
+                <!-- Ajoutez d'autres champs selon vos besoins -->
+            </article>
+        {{end}}
+
+        <div style="width: 640px; height: 480px" id="map"></div>
+        <a id="home" href="/">Home</a>
+    <!-- Ajoutez d'autres champs selon vos besoins -->
+    <script src="/Static/script2.js"></script>
+</body>
+</html>
