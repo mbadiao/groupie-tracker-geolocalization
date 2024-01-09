@@ -11,55 +11,64 @@
 </head>
 
 <body>
-    <div class="aside-content-left">
-        <h1 class="aside-content-left-title">Groupie. <br>Tracker.</h1>
-        <form action="/search" method="GET">
-            <input type="text" class="searchinput" name="searchinput" list="search" placeholder="Write down your search">
-            <datalist id="search">
-                {{range .AllArtists}}
-                <option value="{{.Name}}#artist/band"></option>
-                {{range .Members}}
-                <option value="{{.}}#member"></option>
-                {{end}}
-                <option value="{{.FirstAlbum}}#FirstAlbum"></option>
-                <option value="{{.CreationDate}}#CreationDate"></option>
-                {{end}}
-                <!-- on range dans le champ de Alllocation pour avoir Index du tableau de Locations -->
-                {{range .AllLocation.Index}}
-                <!-- on range dans le champ Locations pour avoir chaque localisation -->
-                {{range .Locations}}
-                <option value="{{.}}#locations"></option>
-                {{end}}
-                {{end}}
-            </datalist>
-            <input class="button-search" type="submit" value="GO">
-        </form>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
     </div>
-
-
-
-    <div class="container">
-        <h1 class="container-title">Find Your Artist.</h1>
-        <div class="slider-wrapper">
-            <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
-            <div class="image-list">
-                {{range .AllArtists}}
-                    <div class="image-items">
-                        <a href="/artist/{{.Id}}"><img class="image-item" src="{{.Image}}" alt=""></a>
-                        <p>{{.Name}}</p>
-                    </div>
-                {{end}}
-            </div>
-            <button id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button>
+   
+        <div class="aside-content-left" >
+            <h1 class="aside-content-left-title">Groupie. <br>Tracker.</h1>
+            <form action="/search" method="GET">
+                <input type="text" class="searchinput" name="searchinput" list="search" placeholder="Write down your search">
+                <datalist id="search">
+                    {{range .AllArtists}}
+                    <option value="{{.Name}}#artist/band"></option>
+                    {{range .Members}}
+                    <option value="{{.}}#member"></option>
+                    {{end}}
+                    <option value="{{.FirstAlbum}}#FirstAlbum"></option>
+                    <option value="{{.CreationDate}}#CreationDate"></option>
+                    {{end}}
+                    <!-- on range dans le champ de Alllocation pour avoir Index du tableau de Locations -->
+                    {{range .AllLocation.Index}}
+                    <!-- on range dans le champ Locations pour avoir chaque localisation -->
+                    {{range .Locations}}
+                    <option value="{{.}}#locations"></option>
+                    {{end}}
+                    {{end}}
+                </datalist>
+                <input class="button-search" type="submit" value="GO">
+            </form>
+            <button class="button-filter" onclick="openNav()">open filter</button>
         </div>
-        <div class="slider-scrollbar">
-            <div class="scrollbar-track">
-                <div class="scrollbar-thumb">
-                    
+    
+    
+    
+        <div class="container" >
+            <h1 class="container-title">Find Your Artist.</h1>
+            <div class="slider-wrapper">
+                <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
+                <div class="image-list">
+                    {{range .AllArtists}}
+                        <div class="image-items">
+                            <a href="/artist/{{.Id}}"><img class="image-item" src="{{.Image}}" alt=""></a>
+                            <p>{{.Name}}</p>
+                        </div>
+                    {{end}}
+                </div>
+                <button id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button>
+            </div>
+            <div class="slider-scrollbar">
+                <div class="scrollbar-track">
+                    <div class="scrollbar-thumb">
+                        
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
         <!-- Ajoutez d'autres champs selon vos besoins -->
 </body>
 

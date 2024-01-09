@@ -19,16 +19,19 @@ font-family: 'archiaregular', sans-serif;
 
 
 body {
-display: flex;
-  flex-direction: column;
-justify-content: center;
-align-items: center;
 min-height: 100vh;
 background: #ffffff;
+display: flex;
+flex-direction: column;
+padding: 20px;
 }
 
   article {
-    text-align: center;
+    text-align: left;
+  }
+
+  article h2 {
+    color: #2F4858;
   }
   
  .hover-trigger{
@@ -39,17 +42,126 @@ background: #ffffff;
   article li {
     list-style: none;
     margin-bottom: 2vh;
+    margin-top: 2vh;
+  }
 
+  ul{
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left:2px solid #2F4858;
   }
 
   #home{ 
     border: none;
     cursor: pointer;
-    padding: 2vh 2vh;
-      width: fit-content;
-    background: #2F4858;
+    padding: 15px 15px;
+    width: fit-content;
+    background: #ffffff;
     box-shadow: 35px 35px 100px 10px rgba(0, 0, 0, 0.25);
     text-decoration: none;
-    color: white;
+    color: rgb(0, 0, 0);
+    transition: all 0.3s;
+  }
+
+  #home:hover{
+    scale: 1.1;
   }
   
+.header-container {
+  background-color: #2F4858;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  border-radius: 10px;
+  width: 100%;
+  padding-left: 50px;
+  height: 30vh;
+}
+
+.box-personal-infos{
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: baseline;
+  padding-left: 20px;
+}
+
+.box-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: baseline;
+}
+
+.box-name .artist-name{
+  font-size: 70px;
+  color: white;
+  font-weight:  bold;
+}
+
+.box-name .title-artist{
+  font-size: 20px;
+  color: white;
+  font-weight:  bold;
+}
+
+.cercle-grey{
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  background: #ffffff;
+  margin: 0px 10px;
+}
+.box-crea-album-date{
+  display: flex;
+  font-size: 18px;
+  color: whitesmoke;
+}
+
+
+.box-member, .box-location, .box-date, .box-relation{
+  height: 35vh;
+  border-radius: 10px;
+  background-color: white;
+  overflow: scroll;
+  width: 100%;
+  padding: 15px;
+  box-shadow: 35px 35px 100px 10px rgba(0, 0, 0, 0.25);
+
+}
+
+.box-container{
+  padding-top: 20px;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 20em;
+  place-items: center;
+  width: 50%;
+  gap: 20px;
+}
+
+.all-infos-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+#map{
+  border-radius: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .header-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .box-personal-infos {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Add more responsive adjustments as needed */
+}

@@ -12,71 +12,82 @@
 </head>
 <body>
         {{with .Artists}}
-        <img class="hover-trigger" src="{{.Image}}" alt="">
-                <article>
-                    <h1 class="name-artist">Name:</h1>
-                    <p>{{.Name}}</p>
-                    <p> <h1>Creation Date:</h1>{{.CreationDate}}</p>
-                    <p> <h1>First Album:</h1> {{.FirstAlbum}}</p>
-                    <ul>
-                        <h1>Members:</h1>
-                        {{range .Members}}
-                            <li>{{.}}</li>
-                        {{end}}
-                    </ul>
-                    <!-- Ajoutez d'autres détails d'artiste selon vos besoins -->
-                </article>
-        {{end}}
-
-    
-        {{with .Location}}
-                <article>
-                    <h1>Locations</h1>
-                    <p>
-                        <ul>
-                            {{range .Locations}}
-                                <li class="Location">{{.}}</li> 
-                            {{end}}
-                        </ul> 
-                    </p>
-                    <!-- Ajoutez d'autres champs selon vos besoins -->
-                </article>
-        {{end}}
-
-
-        {{with .ConcertDates}}
-                <article>
-                    <h1>Dates</h1>
-                    <p>
-                        <ul>
-                            {{range .Dates}}
-                                <li>{{.}}</li> 
-                            {{end}}
-                        </ul> 
-                    </p>
-                    <!-- Ajoutez d'autres champs selon vos besoins -->
-                </article>
-        {{end}}
-
-        {{with .Relations}}
-            <article>
-                <h1>Relations</h1>
-                <p>
-                    <ul>
-                        {{range $Location, $Dates := .DatesLocations}}
-                           {{ range $Date := $Dates }}
-                                <li>{{ $Location }}-- {{ $Date }} </li>
-                            {{ end }}    
-                        {{end}}
-                    </ul> 
-                </p>
-                <!-- Ajoutez d'autres champs selon vos besoins -->
+        <div class="header-container">
+            <img class="hover-trigger" style="width: 150px; height: 150px; border-radius: 5px;" src="{{.Image}}" alt="">
+            <article class="box-personal-infos">
+                <div class="box-name">
+                    <p class="title-artist">Artist</p>
+                    <p class="artist-name">{{.Name}}</p>
+                </div>
+                <div class="box-crea-album-date">
+                    <p> Creation Date:{{.CreationDate}}</p>
+                    <div class="cercle-grey"></div>
+                    <p> First Album:{{.FirstAlbum}}</p>
+                </div>
+                <a id="home" href="/">Home</a>
             </article>
-        {{end}}
+        </div>
+        <div class="all-infos-container">
 
-        <div style="width: 640px; height: 480px" id="map"></div>
-        <a id="home" href="/">Home</a>
-    <!-- Ajoutez d'autres champs selon vos besoins -->
-    <script src="/Static/script2.js"></script>
+            <div class="box-container">
+                    <article class="box-member">
+                        <h2>Members</h2>
+                        <ul>
+                            {{range .Members}}
+                                <li>{{.}}</li>
+                            {{end}}
+                        </ul>
+                    </article>
+                    {{end}}
+        
+                    {{with .Location}}
+                    <article class="box-location">
+                        <h2>Locations</h2>
+                        <p>
+                            <ul>
+                                {{range .Locations}}
+                                    <li class="Location">{{.}}</li> 
+                                {{end}}
+                            </ul> 
+                        </p>
+                        <!-- Ajoutez d'autres champs selon vos besoins -->
+                    </article>
+                    {{end}}
+        
+        
+                    {{with .ConcertDates}}
+                            <article class="box-date">
+                                <h2>Dates</h2>
+                                <p>
+                                    <ul>
+                                        {{range .Dates}}
+                                            <li>{{.}}</li> 
+                                        {{end}}
+                                    </ul> 
+                                </p>
+                                <!-- Ajoutez d'autres champs selon vos besoins -->
+                            </article>
+                    {{end}}
+        
+                    {{with .Relations}}
+                        <article class="box-relation">
+                            <h2>Relations</h2>
+                            <p>
+                                <ul>
+                                    {{range $Location, $Dates := .DatesLocations}}
+                                    {{ range $Date := $Dates }}
+                                            <li>{{ $Location }}-- {{ $Date }} </li>
+                                        {{ end }}    
+                                    {{end}}
+                                </ul> 
+                            </p>
+                            <!-- Ajoutez d'autres champs selon vos besoins -->
+                        </article>
+                    {{end}}
+            </div>
+            <div style="width: 640px; height: 480px" id="map"></div>
+        </div>
+<!-- Ajoutez d'autres champs selon vos besoins -->
+<script src="/Static/script2.js"></script>
 </body>
 </html>
