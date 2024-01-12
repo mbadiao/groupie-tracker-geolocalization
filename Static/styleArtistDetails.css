@@ -23,7 +23,7 @@ min-height: 100vh;
 background: #ffffff;
 display: flex;
 flex-direction: column;
-padding: 20px;
+padding: 10px;
 }
 
   article {
@@ -84,6 +84,7 @@ padding: 20px;
   justify-content: baseline;
   align-items: baseline;
   padding-left: 20px;
+  gap: 10px;
 }
 
 .box-name {
