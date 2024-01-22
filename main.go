@@ -11,6 +11,7 @@ const port = ":8081"
 func main() {
 
 	http.Handle("/Static/", http.StripPrefix("/Static/", http.FileServer(http.Dir("Static"))))
+	http.HandleFunc("/filter/", handlers.Filter)
 	http.HandleFunc("/artist/", handlers.ArtistDetails)
 	http.HandleFunc("/search/", handlers.Search)
 	http.HandleFunc("/", handlers.Home)

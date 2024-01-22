@@ -1,14 +1,18 @@
-# Groupie Trackers Search Bar
+# Groupie Trackers Geolocalisation
 
 ## Introduction
 
-Groupie Trackers Search Bar est un projet visant à recevoir une API donnée et à manipuler les données qu'elle contient afin de créer un site affichant ces informations, avec le Search Bar il est possible de rechercher par rapport a 
+Groupie Trackers Géolocalisation est un projet visant à utiliser une API donnée pour manipuler les données qu'elle contient et créer un site affichant ces informations. Le projet intègre une barre de recherche permettant aux utilisateurs de rechercher des informations selon divers critères, notamment l'artiste, le nom, les membres, les emplacements, la date du premier album et la date de création. De plus, une fonctionnalité de géolocalisation est mise en œuvre pour afficher les emplacements sur une carte à l'aide d'une API de MapQuest. Les principaux contributeurs à ce projet sont Cherif Nzale et Mbaye Diao.
+
+# avec le Search Bar il est possible de rechercher par rapport a 
 - artist
 - name
 - members
 - locations
 - first album date
-- creation date. 
+- creation date.
+
+#  avec geocalisation il est possible d'afficher les localisation dans une map grace a une api provenant de mapQuest
 Les principaux contributeurs à ce projet sont Cherif Nzale et Mbaye Diao.
 
 ## API Structure
@@ -50,6 +54,8 @@ Ce projet vous aidera à apprendre sur :
 - La manipulation et le stockage des données.
 - Les fichiers et le format JSON.
 - HTML.
+- Manipulation of Maps API
+- Geolocation, geocoding, etc
 - La création et l'affichage d'événements.
 - Le client-serveur.
 

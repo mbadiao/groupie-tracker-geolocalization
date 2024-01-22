@@ -9,6 +9,7 @@ window.onload = function() {
     AllLocations.push(content)
   }
   console.log(AllLocations)
+
     L.mapquest.key = '30QWojzc6A5fCCGr0v5NhF4IDRnM38j1';
     
     // Geocode three locations, then call the createMap callback
@@ -23,15 +24,23 @@ window.onload = function() {
         maxZoom: 13,
       });
 
+      let newTranche = AllLocations.slice(1,-1)
+
       map.addControl(L.mapquest.control());
 
-      // Generate the feature group containing markers from the geocoded locations
-      var featureGroup = generateMarkersFeatureGroup(response);
-
-      // Add markers to the map and zoom to the features
-      featureGroup.addTo(map);
-      map.fitBounds(featureGroup.getBounds());
+      L.mapquest.directions().route({
+        start: AllLocations[0],
+        end: AllLocations[-1],
+        waypoints: newTranche
+      });
     }
+
+    // Generate the feature group containing markers from the geocoded locations
+    var featureGroup = generateMarkersFeatureGroup(response);
+
+    // Add markers to the map and zoom to the features
+    featureGroup.addTo(map);
+    map.fitBounds(featureGroup.getBounds());
 
     function generateMarkersFeatureGroup(response) {
       var group = [];

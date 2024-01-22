@@ -13,10 +13,96 @@
 <body>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
+        <h1 class="container-title">Filter.</h1>
+        <form action="/filter" method="get">
+        
+            <div class="range">
+                <label class="Filter-Title-Member">Carrer starting year:</label>
+                <div class="range-sliders">
+                    <span class="range-selecteds"></span>
+                </div>
+                <div class="range-inputs">
+                    <input type="range" class="mindate" min="1958" max="2015" value="1958" step="1">
+                    <input type="range" class="maxdate" min="1958" max="2015" value="2015" step="1">
+                </div>
+                <div class="range-prices">
+                    <label for="mincreationdate">Min</label>
+                    <input name="mincreationdate" value="1958">
+                    <label for="maxcreationdate">Max</label>
+                    <input name="maxcreationdate" value="2015">
+                </div>
+                 <!---------------------------------------------------------------------------------->
+                <label class="Filter-Title-Member">First Album:</label>
+                <div class="range-slider">
+                    <span class="range-selected"></span>
+                </div>
+                <div class="range-input">
+                    <input type="range" class="min" min="1963" max="2018" value="1963" step="1">
+                    <input type="range" class="max" min="1963" max="2018" value="2018" step="1">
+                </div>
+                <div class="range-price">
+                    <label for="minfirstalbum">Min</label>
+                    <input name="minfirstalbum" value="1963">
+                    <label for="maxfirstalbum">Max</label>
+                    <input name="maxfirstalbum" value="2018">
+                </div>
+            </div>
+            <div>
+        
+        
+        
+                <!-- ... other form elements ... -->
+                <p class="Filter-Title-Member">Member</p>
+                <div class="container-label-member">
+                    <div>
+                        <label class="label" for="checkbox1">1-member</label>
+                        <input type="checkbox" id="checkbox1" name="members" value="1">    
+                    </div>
+                    <div>
+                        <label class="label" for="checkbox2">2-member</label>
+                        <input type="checkbox" id="checkbox2" name="members" value="2">
+                    </div>
+                    <div>
+                        <label class="label" for="checkbox3">3-member</label>
+                        <input type="checkbox" id="checkbox3" name="members" value="3">
+                    </div>
+                    <div>
+                        <label class="label" for="checkbox4">4-member</label>
+                    <input type="checkbox" id="checkbox4" name="members" value="4">
+                    </div>
+                    <div>
+                        <label class="label" for="checkbox5">5-member</label>
+                    <input type="checkbox" id="checkbox5" name="members" value="5">
+                    </div>
+                    <div>
+                        <label class="label" for="checkbox6">6-member</label>
+                        <input type="checkbox" id="checkbox6" name="members" value="6">
+                    </div>
+                    <div>
+                        <label class="label" for="checkbox7">7-member</label>
+                        <input type="checkbox" id="checkbox7" name="members" value="7">
+                    </div>
+                    <div>
+                        <label class="label" for="checkbox8">8-member</label>
+                    <input type="checkbox" id="checkbox8" name="members" value="8">
+                    </div>
+                </div>
+                <!-- ... repeat for other checkboxes ... -->
+        
+                <div class="styleLoc">
+                    <label class="Filter-Title-location" for="location">Localisation</label>
+                    <select name="location" id="localisation">
+                        <option value="all">all</option>
+                        {{range .AllLocation.Index}}
+                        {{range .Locations}}
+                        <option value="{{.}}">{{.}}</option>
+                        {{end}}
+                        {{end}}
+                    </select>
+                    <input id="filter-button" type="submit" value="FILTER">
+                </div>
+            </div>
+        </form>
     </div>
    
         <div class="aside-content-left" >

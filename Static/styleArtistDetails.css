@@ -18,13 +18,13 @@ font-family: 'archiaregular', sans-serif;
 }
 
 
-body {
-min-height: 100vh;
-background: #ffffff;
-display: flex;
-flex-direction: column;
-padding: 10px;
-}
+  body {
+  min-height: 100vh;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  }
 
   article {
     text-align: left;
